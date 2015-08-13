@@ -11,7 +11,7 @@ class SnippetList(generics.ListCreateAPIView):
     serializer_class = SnippetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
 
-    def perfom_create(self, serializer):
+    def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
